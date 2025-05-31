@@ -9,7 +9,16 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+      
       - name: Run skims scan
         uses: docker://docker.io/fluidattacks/skims:latest
         with:
           args: skims scan skims-config.yaml
+      
+      - name: Upload scan results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: fluid-attacks-scan-results
+          path: ./Fluid-Attacks-Results.csv
+          retention-days: 30
