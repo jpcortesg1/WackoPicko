@@ -11,3 +11,4 @@ sast:
   #   - glob(**/node_modules/**)
   #   - glob(**/test/**)
 tracing_opt_out: True 
+strict: true
