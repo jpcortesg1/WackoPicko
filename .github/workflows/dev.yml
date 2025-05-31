@@ -12,4 +12,4 @@ jobs:
       - name: Run skims scan
         uses: docker://docker.io/fluidattacks/skims:latest
         with:
-          args: skims scan website
+          args: skims scan website/skims-config.yaml
